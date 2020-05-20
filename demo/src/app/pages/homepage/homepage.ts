@@ -4,7 +4,6 @@ import {FooterModule} from '../../shared/footer/footer';
 import {RouterModule, Routes} from '@angular/router';
 import {ComponentPageTitle} from '../page-title/page-title';
 import {NavigationFocusModule} from '../../shared/navigation-focus/navigation-focus';
-import { MatDaterangepickerModule } from 'mat-daterangepicker';
 import { FormControl, FormGroup, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -12,6 +11,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CommonModule } from '@angular/common';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDaterangepickerModule } from 'mat-daterangepicker';
 
 @Component({
   selector: 'app-homepage',

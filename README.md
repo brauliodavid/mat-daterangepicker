@@ -45,6 +45,7 @@ import code bellow in your material style theme to have compatibility with your 
 ## Usage
 
 ```typescript
+// in your component
 export class DaterangepickerExampleComponent {
     startDate = new Date()
     endDate = new Date()

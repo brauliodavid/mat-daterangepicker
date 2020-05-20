@@ -6,7 +6,7 @@
     $primary: map-get($theme, primary);
 
     .mat-daterange-calendar-body-in-range {
-        background-color: mat-color($primary, 50);
+        background-color: rgba(mat-color($primary, 500), .15);
 
         &.mat-daterange-calendar-body-range-start {
             border-radius: 100% 0 0 100%;
