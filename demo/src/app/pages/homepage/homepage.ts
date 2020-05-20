@@ -28,8 +28,11 @@ export class Homepage implements OnInit {
 		showCustomRanges: new FormControl(false)
 	})
 
-	startDate = new Date()
-	endDate = new Date()
+	startDate = null
+	endDate = null
+
+	minDate = new Date(2020, 7, 13);
+  	maxDate = new Date(2020, 9, 18);
 
 	html = `
 	\`\`\`html

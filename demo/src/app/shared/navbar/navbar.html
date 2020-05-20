@@ -1,32 +1,27 @@
 <!-- TODO: figure out if the <nav> should go inside of a <header> element. -->
 <nav class="docs-navbar-header" aria-label="Top Toolbar"
      [class.is-next-version]="isNextVersion">
-  <div class="skip-link-wrapper" [class.cdk-visually-hidden]="skipLinkHidden" *ngIf="skipLinkHref">
-    <a mat-raised-button [href]="skipLinkHref" (focus)="skipLinkHidden = false" (blur)="skipLinkHidden = true" color="accent">
-      Skip to main content
-    </a>
-  </div>
   <a mat-button class="docs-button" routerLink="/" aria-label="Angular Material">
     <img class="docs-angular-logo"
-         src="../../../assets/img/homepage/angular-white-transparent.svg"
+         src="assets/img/homepage/angular-white-transparent.svg"
          alt="angular">
-    <span>Material</span>
+    <span>Material Daterangepicker</span>
   </a>
 
   <div class="flex-spacer"></div>
 
   <theme-picker></theme-picker>
-  <a mat-button class="docs-button docs-navbar-hide-small" href="https://github.com/angular/components"
+  <a mat-button class="docs-button docs-navbar-hide-small" href="https://github.com/brauliodavid/mat-daterangepicker"
      aria-label="GitHub Repository">
     <img class="docs-angular-logo"
-         src="../../../assets/img/homepage/github-circle-white-transparent.svg"
+         src="assets/img/homepage/github-circle-white-transparent.svg"
          alt="angular">
     GitHub
   </a>
   <a mat-icon-button class="docs-button docs-navbar-show-small"
-     href="https://github.com/angular/components" aria-label="GitHub Repository">
+     href="https://github.com/brauliodavid/mat-daterangepicker" aria-label="GitHub Repository">
     <img class="docs-angular-logo"
-         src="../../../assets/img/homepage/github-circle-white-transparent.svg"
+         src="assets/img/homepage/github-circle-white-transparent.svg"
          alt="angular">
   </a>
 </nav>

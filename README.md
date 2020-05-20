@@ -2,7 +2,7 @@
 
 This is an extension library for the native [Angular Material Datepicker](https://material.angular.io/components/datepicker/overview). Then you can use all the options provided by the ```Matdatepicker``` material component.
 
-[Demo](https://material.angular.io/components/datepicker/overview)
+[Demo](https://brauliodavid.github.io/mat-daterangepicker)
 
 ## Requirements
 
@@ -15,14 +15,14 @@ This is an extension library for the native [Angular Material Datepicker](https:
 
 `npm i mat-daterangepicker`
 
-import MatDaterangepickerModile in your module
+import MatDaterangepickerModule in your module
 
 ```typescript
-import { MatDaterangepickerModile } from 'mat-daterangepicker';
+import { MatDaterangepickerModule } from 'mat-daterangepicker';
 
 @NgModule({
     imports: [
-        MatDaterangepickerModile
+        MatDaterangepickerModule
     ],
     declarations: [AppComponent],
     bootstrap:    [AppComponent]
@@ -37,7 +37,7 @@ import code bellow in your material style theme to have compatibility with your 
 ```scss
 @import 'mat-daterangepicker/mat-daterangepicker.theme.scss';
 
-@include mat-daterangepicker-theme($theme-skin);
+@include mat-daterangepicker-theme($theme);
 ```
 
 ## Usage
@@ -64,7 +64,7 @@ export class DaterangepickerExampleComponent {
 
 | Option                              | Description                                                               |
 | ----------------------------------- | ------------------------------------------------------------------------- |
-| @Input() dualView: boolean          | An input to display two calendars when selecting date range               |
+| @Input() dualView: boolean          | An input to display two calendars when selecting dates                    |
 | @Input() applyButton: boolean       | An input to display an apply button to close the calendar picker          |
 | @Input() showCustomRanges: boolean  | An input to display default custom ranges options in the calendar picker  |
 

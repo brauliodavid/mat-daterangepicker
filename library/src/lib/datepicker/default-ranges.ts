@@ -65,7 +65,7 @@ const lastThreeMonthsRange = () => {
 	}
 }
 
-export const DEFAULT_RANGES_DATES = [
+export const DEFAULT_DATES_RANGES = [
 	{name: 'Today', startDate: new Date(), endDate: new Date()},
 	{name: 'Yesterday', startDate: new Date(new Date().setDate(new Date().getDate()-1)), endDate: new Date(new Date().setDate(new Date().getDate()-1))},
 	{name: 'Last 7 Days', startDate: new Date(new Date().setDate(new Date().getDate()-6)), endDate: new Date()},

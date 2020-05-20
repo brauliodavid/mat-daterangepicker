@@ -4,11 +4,9 @@
 @import './styles/tables';
 @import './styles/general';
 @import 'styles/prism-themes/prism-material-light.css';
-@import 'mat-daterangepicker/mat-daterangepicker.theme.scss';
 
 // Include material core styles.
 @include mat-core();
 
 @include angular-material-theme($theme);
 @include material-docs-app-theme($theme);
-@include mat-daterangepicker-theme($theme);

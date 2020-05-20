@@ -29,7 +29,7 @@ import { MatDatepicker, MatDatepickerInput, MAT_DATEPICKER_SCROLL_STRATEGY, MatD
 import { MatDaterangepickerContent } from '../datepicker-content/datepicker-content.component';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { take } from 'rxjs/operators';
-import { DEFAULT_RANGES_DATES } from './default-ranges';
+import { DEFAULT_DATES_RANGES } from './default-ranges';
 
 export interface CustomRange<D> {
 	name: string
@@ -37,7 +37,7 @@ export interface CustomRange<D> {
 	endDate: D | Date
 }
 
-export const SG_CUSTOM_RANGES = new InjectionToken<CustomRange<any>[]>('Custom Ranges')
+export const MAT_DEFAULT_DATES_RANGES = new InjectionToken<CustomRange<any>[]>('Custom Ranges')
 
 @Component({
   selector: 'mat-daterangepicker',
@@ -46,7 +46,7 @@ export const SG_CUSTOM_RANGES = new InjectionToken<CustomRange<any>[]>('Custom R
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   providers: [
-	{provide: SG_CUSTOM_RANGES, useValue: []},
+	{provide: MAT_DEFAULT_DATES_RANGES, useValue: []},
   ]
 })
 export class MatDaterangepicker<D> extends MatDatepicker<D> implements OnInit, AfterViewInit, OnDestroy {
@@ -79,7 +79,7 @@ export class MatDaterangepicker<D> extends MatDatepicker<D> implements OnInit, A
 				@Optional() public _drDateAdapter: DateAdapter<D>,
 				@Optional() private _drDir: Directionality,
 				@Optional() @Inject(DOCUMENT) private _drDocument: any,
-				@Inject(SG_CUSTOM_RANGES) public _customRanges: CustomRange<D>[]) {
+				@Inject(MAT_DEFAULT_DATES_RANGES) public _customRanges: CustomRange<D>[]) {
 		super(
 		_drDialog = Object.create(_drDialog),
 		_drOverlay,
@@ -130,8 +130,6 @@ export class MatDaterangepicker<D> extends MatDatepicker<D> implements OnInit, A
 	}
 
 	ngOnInit(){
-		
-
 		if(this.customRanges){
 			this._setCustomRanges()
 		}
@@ -240,7 +238,7 @@ export class MatDaterangepicker<D> extends MatDatepicker<D> implements OnInit, A
 		if(this._customRanges.length){
 			this.customRanges = this._customRanges
 		}else{
-			this.customRanges = DEFAULT_RANGES_DATES.map(range => {
+			this.customRanges = DEFAULT_DATES_RANGES.map(range => {
 				return {
 					name: range.name, 
 					startDate: range.startDate ? this._drDateAdapter.createDate(range.startDate.getFullYear(), range.startDate.getMonth(), range.startDate.getDate()) : null,

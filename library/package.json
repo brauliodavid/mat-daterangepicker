@@ -1,10 +1,27 @@
 {
   "name": "mat-daterangepicker",
   "version": "0.0.1",
+  "description": "Angular material date picker extension to support range selection.",
+  "keywords": [
+    "daterangepicker",
+    "material",
+    "component",
+    "directive",
+    "daterange",
+    "date",
+    "moment",
+    "picker",
+    "datepicker"
+  ],
   "peerDependencies": {
     "@angular/common": "^9.1.7",
     "@angular/core": "^9.1.7",
     "@angular/material": "^9.2.3",
     "tslib": "^1.10.0"
+  },
+  "author": "Braulio David",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brauliodavid/mat-daterangepicker"
   }
 }

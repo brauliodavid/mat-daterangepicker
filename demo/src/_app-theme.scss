@@ -8,6 +8,7 @@
 @import './styles/markdown-theme';
 @import './styles/svg-theme';
 @import './styles/tables-theme';
+@import 'mat-daterangepicker/mat-daterangepicker.theme.scss';
 
 // Styles for the docs app that are based on the current theme.
 @mixin material-docs-app-theme($theme) {
@@ -39,13 +40,11 @@
     background: mat-color($next-theme, 900) !important;
   }
 
-
-
-
   @include example-viewer-theme($theme);
   @include footer-theme($theme);
   @include home-page-theme($theme);
   @include nav-bar-theme($theme);
+  @include mat-daterangepicker-theme($theme);
 }
 
 // Define the light theme.
