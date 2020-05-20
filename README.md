@@ -1,27 +1,76 @@
 # MatDaterangepicker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
+This is an extension library for the native [Angular Material Datepicker](https://material.angular.io/components/datepicker/overview). Then you can use all the options provided by the ```Matdatepicker``` material component.
 
-## Development server
+[Demo](https://material.angular.io/components/datepicker/overview)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Requirements
 
-## Code scaffolding
+| Angular           | Version  |
+|-------------------|----------|
+| angular           | >= 9.0.0 |
+| @angular/material | >= 9.0.0 |
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+`npm i mat-daterangepicker`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+import MatDaterangepickerModile in your module
 
-## Running unit tests
+```typescript
+import { MatDaterangepickerModile } from 'mat-daterangepicker';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+    imports: [
+        MatDaterangepickerModile
+    ],
+    declarations: [AppComponent],
+    bootstrap:    [AppComponent]
+})
+export class AppModule {}
+```
 
-## Running end-to-end tests
+### Angular Material Theme
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+import code bellow in your material style theme to have compatibility with your current material theme.
 
-## Further help
+```scss
+@import 'mat-daterangepicker/mat-daterangepicker.theme.scss';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+@include mat-daterangepicker-theme($theme-skin);
+```
+
+## Usage
+
+```typescript
+export class DaterangepickerExampleComponent {
+    startDate = new Date()
+    endDate = new Date()
+}
+```
+
+```html
+<mat-form-field>
+    <input matInput [matDatepicker]="dpRange" type="text" [value]="startDate" placeholder="Start Date">
+    <mat-daterangepicker #dpRange></mat-daterangepicker>
+</mat-form-field>
+<mat-form-field>
+    <input matInput [matDaterangepickerEnd]="dpRange" type="text" [value]="endDate" placeholder="End Date">
+    <mat-datepicker-toggle matSuffix [for]="dpRange"></mat-datepicker-toggle>
+</mat-form-field>
+```
+
+## Options
+
+| Option                              | Description                                                               |
+| ----------------------------------- | ------------------------------------------------------------------------- |
+| @Input() dualView: boolean          | An input to display two calendars when selecting date range               |
+| @Input() applyButton: boolean       | An input to display an apply button to close the calendar picker          |
+| @Input() showCustomRanges: boolean  | An input to display default custom ranges options in the calendar picker  |
+
+### Mehods
+
+| Method        | Description                                    |
+| ------------- | ---------------------------------------------- |
+| applyRange    | Apply the range and close the calendar picker  |
+| clearRange    | Clear the selected dates                       |

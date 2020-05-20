@@ -1,0 +1,19 @@
+  
+// @import '~@angular/material/theming';
+@import "../../../../node_modules/@angular/material/_theming";
+
+@mixin mat-daterangepicker-theme($theme) {
+    $primary: map-get($theme, primary);
+
+    .mat-daterange-calendar-body-in-range {
+        background-color: mat-color($primary, 50);
+
+        &.mat-daterange-calendar-body-range-start {
+            border-radius: 100% 0 0 100%;
+        }
+
+        &.mat-daterange-calendar-body-range-end {
+            border-radius: 0 100% 100% 0;
+        }
+    }
+}

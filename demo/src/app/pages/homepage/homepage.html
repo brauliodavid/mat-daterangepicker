@@ -1,0 +1,34 @@
+<main class="docs-homepage-promo">
+  	<div class="example-container">
+		<div class="example-options" [formGroup]="formOptions">
+			<h4>Options</h4>
+			<mat-checkbox formControlName="dualView" class="example-option">Dual Calendar View</mat-checkbox>
+			<mat-checkbox formControlName="applyButton" class="example-option">Show Apply Button</mat-checkbox>
+			<mat-checkbox formControlName="touchUi" class="example-option">Touch UI Mode</mat-checkbox>
+			<mat-checkbox formControlName="showCustomRanges" class="example-option">Show Custom Ranges</mat-checkbox>
+		</div>
+		<div *ngIf="formOptions.getRawValue() as options" class="example-daterangepicker">
+			<mat-form-field>
+				<input matInput [matDatepicker]="dpRange" type="text" [value]="startDate" placeholder="Start Date">
+				<mat-daterangepicker #dpRange [touchUi]="options.touchUi" [dualView]="options.dualView" [applyButton]="options.applyButton" [showCustomRanges]="options.showCustomRanges"></mat-daterangepicker>
+			</mat-form-field>
+			<mat-form-field>
+				<input matInput [matDaterangepickerEnd]="dpRange" type="text" [value]="endDate" placeholder="End Date">
+				<mat-datepicker-toggle matSuffix [for]="dpRange"></mat-datepicker-toggle>
+			</mat-form-field>
+		</div>
+		<mat-tab-group class="source-example">
+			<mat-tab label="TS">
+				<markdown [data]="ts"></markdown>
+			</mat-tab>
+			<mat-tab label="HTML">
+				<markdown  [data]="html"></markdown>
+			</mat-tab>
+			<mat-tab label="CSS">
+				<markdown [data]="css"></markdown>
+			</mat-tab>
+		</mat-tab-group>
+	</div>
+</main>
+
+<app-footer></app-footer>

@@ -1,0 +1,56 @@
+<div>
+	<!-- 
+		RANGE: Most of the code is redundant and hera as inheritance boilerplate.
+		The relevant code is marked with a comment.
+		ADDED LOC ~3
+	-->
+	<div class="mat-daterange-calendars" [ngStyle]="{'width': getWidthDateRangePicker()}">
+		<div *ngIf="drDatepicker.showCustomRanges && drDatepicker.customRanges.length" class="mat-daterange-custom-ranges">
+			<button *ngFor="let range of drDatepicker.customRanges" mat-flat-button [color]="isSameRange(range) ? 'primary' : ''" (click)="setCustomRange(range)" class="mat-daterange-calendar-button-action">{{range.name}}</button>
+			<button mat-flat-button [color]="!isSomeRange() ? 'primary' : ''" class="mat-daterange-custom-range mat-daterange-calendar-button-action">Custom Range</button>
+		</div>
+		<mat-daterange-calendar *ngFor="let view of drDatepicker._getViews()" #Calendar cdkTrapFocus
+					[id]="datepicker.id"
+					[ngClass]="datepicker.panelClass"
+					class="mat-daterange-calendar"
+					[view]="view"
+					[setHoverCells]="setHoverCells"
+					[clearBody]="clearBody"
+					
+					[startAt]="datepicker.startAt"
+					[startView]="datepicker.startView"
+					[minDate]="datepicker._minDate"
+					[maxDate]="datepicker._maxDate"
+					[dateFilter]="datepicker._dateFilter"
+					[headerComponent]="datepicker.calendarHeaderComponent"
+					[selected]="datepicker._selected"
+					[@fadeInCalendar]="'enter'"
+					(selectedChange)="datepicker.select($event)"
+					(yearSelected)="datepicker._selectYear($event)"
+					(monthSelected)="datepicker._selectMonth($event)"
+
+					[range]="!!drDatepicker._datepickerInputRangeEnd"
+					[selectedRangeEnd]="drDatepicker._selectedRangeEnd"
+					(selectedRangeEndChange)="drDatepicker.selectRangeEnd($event)"
+					(applyRange)="applyRange()"
+					(clearRange)="clearRange()"
+					(_userSelection)="onUserSelection(view)">
+					<!-- 
+							THE 3 LINES ABOVE ARE THE ONLY ADDITION
+							The _userSelection will pass logic handling to the datepicker component
+							instead of closing the dialog/popup, this is because range logic is handled there.
+
+							The other attributes are passing on the additional date (Range end) bindings
+							and a flag that sets range on/off based on the input range.
+							This means that an *ngIf on that input by the user can toggle range on/off without
+							a special flag.
+					-->
+
+		</mat-daterange-calendar>
+	</div>
+
+	<div *ngIf="drDatepicker.applyButton" class="mat-daterange-calendar-actions">
+		<button mat-button color="primary" (click)="clearRange()">Clear</button>&nbsp;&nbsp;
+		<button mat-flat-button color="primary" (click)="applyRange()">Apply</button>
+	</div>
+</div>

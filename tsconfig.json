@@ -14,7 +14,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "mat-daterangepicker": [
+        "dist/mat-daterangepicker/mat-daterangepicker",
+        "dist/mat-daterangepicker"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

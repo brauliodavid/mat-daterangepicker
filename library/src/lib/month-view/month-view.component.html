@@ -1,0 +1,40 @@
+<!-- 
+    RANGE: Most of the code is redundant and hera as inheritance boilerplate.
+    
+    The 3 attributes in the middle are the additional bindings to the template.
+    They notify the body:
+      - Are we in range mode ([range])
+      - Are all the dates in range ([allInRange])
+        this happens when the start date is before the current month and the end is after it.
+      - The value marking the end of the range ([selectedRangeEndValue])
+
+    ADDED LOC ~3
+ -->
+
+<table class="mat-calendar-table">
+  <thead class="mat-calendar-table-header">
+  <tr><th *ngFor="let day of _weekdays" [attr.aria-label]="day.long">{{day.narrow}}</th></tr>
+  <tr><th class="mat-calendar-table-header-divider" colspan="7" aria-hidden="true"></th></tr>
+  </thead>
+  <tbody mat-daterange-calendar-body
+         [view]="view"
+         [label]="_monthLabel"
+         [rows]="_weeks"
+         [todayValue]="_todayDate"
+         [selectedValue]="_selectedDate"
+
+         [selectedRangeEndValue]="_selectedRangeEndDate"
+         [allInRange]="_allInRange"
+         [range]="_rangable"
+         [createDate]="_createDate"
+         [dateAdapter]="_dateAdapter"
+         [selected]="getSelectedDate()"
+         [selectedRangeEnd]="getSelectedRangeEndDate()"
+         [setHoverCells]="setHoverCells"
+         [clearBody]="clearBody"
+         [labelMinRequiredCells]="3"
+         [activeCell]="_dateAdapter.getDate(activeDate) - 1"
+         (selectedValueChange)="_dateSelected($event)"        
+         (keydown)="_handleCalendarBodyKeydown($event)">
+  </tbody>
+</table>

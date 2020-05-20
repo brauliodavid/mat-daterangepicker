@@ -1,0 +1,5 @@
+@import 'datepicker-content/datepicker-content.theme.scss';
+
+@mixin mat-daterangepicker-theme($test-app-theme) {
+  @include mat-daterangepicker-theme($test-app-theme);
+}

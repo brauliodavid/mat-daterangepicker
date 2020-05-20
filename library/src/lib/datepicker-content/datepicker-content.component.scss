@@ -1,0 +1,44 @@
+.mat-daterange-calendar-body-in-range {
+    background-color: #E8EAF6;
+
+    &.mat-daterange-calendar-body-range-start {
+        border-radius: 100% 0 0 100%;
+    }
+
+    &.mat-daterange-calendar-body-range-end {
+        border-radius: 0 100% 100% 0;
+    }
+}
+
+.mat-daterange-calendars {
+    display: flex;
+}
+
+.mat-daterange-calendar {
+    flex-grow: 1;
+}
+
+.mat-daterange-calendar-actions {
+    padding: 15px;
+    text-align: right;
+}
+
+.mat-daterange-custom-ranges {
+    display: flex;
+    flex-flow: column;
+    width: 130px;
+    padding: 8px;
+}
+
+.mat-daterange-custom-ranges button {
+    text-align: left;
+    font-size: .8rem;
+    line-height: 32px;
+    font-weight: 400 !important;
+}
+
+.mat-daterange-calendar-button-action {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

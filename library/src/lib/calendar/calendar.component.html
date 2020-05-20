@@ -1,0 +1,51 @@
+<!-- 
+	RANGE: Most of the code is redundant and hera as inheritance boilerplate.
+	The relevant code is marked with a comment.
+	ADDED LOC ~3
+-->
+<ng-template [cdkPortalOutlet]="_calendarHeaderPortal"></ng-template>
+
+<div class="mat-calendar-content" [ngSwitch]="currentView" cdkMonitorSubtreeFocus tabindex="-1">
+
+	<mat-daterange-month-view
+		*ngSwitchCase="'month'"
+		[view]="view"
+		[activeDate]="activeDate"
+		[selected]="selected"
+		[dateFilter]="dateFilter"
+		[maxDate]="maxDate"
+		[minDate]="minDate"
+		(selectedChange)="_dateSelected($event)"
+		(_userSelection)="_userSelected()"
+
+		[range]="range"
+		[setHoverCells]="setHoverCells"
+		[clearBody]="clearBody"
+		[selectedRangeEnd]="selectedRangeEnd"
+		(selectedRangeEndChange)="_dateSelectedRangeEnd($event)">
+		<!-- THE 3 LINES ABOVE ARE THE ONLY ADDITION -->
+	</mat-daterange-month-view>
+
+	<mat-year-view
+		*ngSwitchCase="'year'"
+		[activeDate]="activeDate"
+		[selected]="selected"
+		[dateFilter]="dateFilter"
+		[maxDate]="maxDate"
+		[minDate]="minDate"
+		(monthSelected)="_monthSelectedInYearView($event)"
+		(selectedChange)="_goToDateInView($event, 'month')">
+	</mat-year-view>
+
+	<mat-multi-year-view
+		*ngSwitchCase="'multi-year'"
+		[activeDate]="activeDate"
+		[selected]="selected"
+		[dateFilter]="dateFilter"
+		[maxDate]="maxDate"
+		[minDate]="minDate"
+		(yearSelected)="_yearSelectedInMultiYearView($event)"
+		(selectedChange)="_goToDateInView($event, 'year')">
+	</mat-multi-year-view>
+</div>
+
