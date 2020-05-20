@@ -2,6 +2,8 @@
 
 This is an extension library for the native [Angular Material Datepicker](https://material.angular.io/components/datepicker/overview). Then you can use all the options provided by the ```Matdatepicker``` material component.
 
+<img src="https://raw.githubusercontent.com/brauliodavid/mat-daterangepicker/master/demo/src/assets/img/demo-2.png" width="500"/>
+
 [Demo](https://brauliodavid.github.io/mat-daterangepicker)
 
 ## Requirements
