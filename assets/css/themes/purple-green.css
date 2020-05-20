@@ -1739,5 +1739,5 @@ app-navbar {
       color: #ce93d8; }
 
 .mat-daterange-calendar-body-in-range {
-  background-color: #E1BEE7 !important;
+  background-color: rgba(156, 39, 176, 0.15) !important;
 }

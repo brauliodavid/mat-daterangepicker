@@ -186,6 +186,7 @@ This software is provided by the copyright holders and contributors “as is” 
 
 
 mat-daterangepicker
+MIT
 
 ngx-markdown
 MIT
