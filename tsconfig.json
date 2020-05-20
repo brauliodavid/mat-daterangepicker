@@ -17,7 +17,6 @@
     ],
     "paths": {
       "mat-daterangepicker": [
-        "dist/mat-daterangepicker/mat-daterangepicker",
         "dist/mat-daterangepicker"
       ]
     }
