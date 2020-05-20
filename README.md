@@ -15,7 +15,7 @@ This is an extension library for the native [Angular Material Datepicker](https:
 
 `npm i mat-daterangepicker`
 
-import MatDaterangepickerModule in your module
+import `MatDaterangepickerModule` in your module
 
 ```typescript
 import { MatDaterangepickerModule } from 'mat-daterangepicker';
