@@ -1,6 +1,6 @@
 {
   "name": "mat-daterangepicker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Angular material date picker extension to support range selection.",
   "keywords": [
     "daterangepicker",
