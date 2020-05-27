@@ -50,8 +50,6 @@ export class MatDaterangepickerContent<D> extends MatDatepickerContent<D> implem
 
 	// THIS IS THE ONLY ADDITION
 	onUserSelection(view): void {
-		// console.log(view, this.datepicker._selected, this.drDatepicker._selectedRangeEnd)
-		// console.log(this.calendars.toArray())
 		this.drDatepicker._userSelection();
 	}
 
