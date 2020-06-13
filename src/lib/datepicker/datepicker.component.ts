@@ -16,7 +16,9 @@ import {
   AfterViewInit,
   OnInit,
   InjectionToken,
-  Injector
+  Injector,
+  Output,
+  EventEmitter
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
@@ -54,6 +56,8 @@ export class MatDaterangepicker<D> extends MatDatepicker<D> implements OnInit, A
 	@Input() applyButton: boolean = true
 	@Input() dualView: boolean = true
 	@Input() showCustomRanges: boolean = false
+
+	@Output() apply = new EventEmitter()
 
 	customRanges = []
 
@@ -188,6 +192,7 @@ export class MatDaterangepicker<D> extends MatDatepicker<D> implements OnInit, A
 
 	applyRange(): void {
 		this.close();
+		this.apply.emit()
 	}
 
 	clearRange(): void {
