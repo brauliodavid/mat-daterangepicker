@@ -70,6 +70,7 @@ export class DaterangepickerExampleComponent {
 | @Input() dualView: boolean          | An input to display two calendars when selecting dates                    |
 | @Input() applyButton: boolean       | An input to display an apply button to close the calendar picker          |
 | @Input() showCustomRanges: boolean  | An input to display default custom ranges options in the calendar picker  |
+| @Ouput() apply: EventEmitter        | Fired when apply button is clicked                                        |
 
 ### Mehods
 

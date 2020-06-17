@@ -8,7 +8,6 @@ import {MaterialDocsApp} from './material-docs-app';
 import {MATERIAL_DOCS_ROUTES} from './routes';
 import {NavBarModule} from './shared/navbar';
 import { MarkdownModule } from 'ngx-markdown';
-import { NgxMdModule } from 'ngx-md';
 
 import 'prismjs';
 import 'prismjs/components/prism-typescript.min.js';
@@ -25,8 +24,7 @@ import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
       relativeLinkResolution: 'corrected'
     }),
     NavBarModule,
-    MarkdownModule.forRoot(),
-    NgxMdModule.forRoot()
+    MarkdownModule.forRoot()
   ],
   declarations: [MaterialDocsApp],
   providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],

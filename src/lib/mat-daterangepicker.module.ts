@@ -45,20 +45,18 @@ import { MatDaterangeCalendarBody } from './calendar-body/calendar-body.componen
     MatDaterangeCalendarBody
   ],
   exports: [
-    MatDatepickerModule,
-
     MatDaterangepicker,
     MatDaterangepickerInputEnd,
     MatDaterangepickerContent
   ],
   entryComponents: [
-    MatDatepicker,
-    MatDatepickerToggle,
-    MatDatepickerContent,
-    MatCalendar,
-    MatMonthView,
-    MatCalendarBody,
-    MatCalendarHeader,
+    // MatDatepicker,
+    // MatDatepickerToggle,
+    // MatDatepickerContent,
+    // MatCalendar,
+    // MatMonthView,
+    // MatCalendarBody,
+    // MatCalendarHeader,
 
     MatDaterangepickerContent
   ]
