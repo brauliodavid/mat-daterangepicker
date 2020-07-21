@@ -12,6 +12,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CommonModule } from '@angular/common';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDaterangepickerModule } from 'mat-daterangepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-homepage',
@@ -80,17 +81,18 @@ const routes: Routes = [ {path: '', component: Homepage}];
   imports: [
 	CommonModule,
     ReactiveFormsModule,
-        FormsModule,
-            MatButtonModule,
-            FooterModule,
-            RouterModule.forChild(routes),
-            NavigationFocusModule,
-            MatDaterangepickerModule,
-			MatFormFieldModule,
-			MatCheckboxModule,
-            MatInputModule,
-			MarkdownModule,
-			MatTabsModule
+	FormsModule,
+	MatButtonModule,
+	FooterModule,
+	RouterModule.forChild(routes),
+	MatDatepickerModule,
+	NavigationFocusModule,
+	MatDaterangepickerModule,
+	MatFormFieldModule,
+	MatCheckboxModule,
+	MatInputModule,
+	MarkdownModule,
+	MatTabsModule
   ],
   exports: [Homepage],
   declarations: [Homepage],
